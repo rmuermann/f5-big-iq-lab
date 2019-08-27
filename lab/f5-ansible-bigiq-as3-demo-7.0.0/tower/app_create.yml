@@ -60,6 +60,23 @@
 
     - debug:
         var: json_response_task.json
+        
+    ## PUT APP INTO THE CORRECT TILE
+    
+#    -name: Place App in tile
+#     uri:
+#       url: https://{{ mgmt }}/mgmt/cm/global/global-apps-merge-move
+#       method: POST
+#       headers:
+#         Content-Type: application/json
+#         X-F5-Auth-Token: "{{auth.json.token.token}}"
+#       body: "{"componentAppReferencesToMove":[{"link":"https://10.1.1.4/mgmt/cm/global/config-sets/2fbb0e27-28ac-37ab-8e23-1ddc653c10eb"}],"targetGlobalAppName":"myApp","deleteEmptyGlobalAppsWhenDone":false,"requireNewGlobalApp":true}"
+#       body_format: json
+#       timeout: 60
+#       status_code: 200, 202
+#       validate_certs: false
+#     register: json_response
+
 
 # Create Ansible Tower Template based on Application
 - import_playbook: tower_template.yml
